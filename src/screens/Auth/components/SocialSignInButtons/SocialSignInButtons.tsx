@@ -1,13 +1,22 @@
 import React from 'react';
 import CustomButton from '../CustomButton';
+import {signInWithRedirect} from 'aws-amplify/auth';
 
 const SocialSignInButtons = () => {
-  const onSignInFacebook = () => {
-    console.warn('onSignInFacebook');
+  const onSignInFacebook = async () => {
+    try {
+      await signInWithRedirect({provider: 'Facebook'});
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const onSignInGoogle = () => {
-    console.warn('onSignInGoogle');
+  const onSignInGoogle = async () => {
+    try {
+      await signInWithRedirect({provider: 'Google'});
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onSignInApple = () => {
