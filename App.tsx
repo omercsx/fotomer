@@ -1,12 +1,15 @@
-import {View, Text} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import Navigation from './src/navigation';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import AuthContextProvider from './src/context/AuthContext';
 
-const App = () => {
+function App(): React.JSX.Element {
   return (
-    <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
-      <AntDesign name="home" size={24} color="black" />
-    </View>
+    <SafeAreaProvider>
+      <AuthContextProvider>
+        <Navigation />
+      </AuthContextProvider>
+    </SafeAreaProvider>
   );
-};
+}
 
 export default App;

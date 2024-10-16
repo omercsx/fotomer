@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fotomer-staging-42396-authRole",
+      "UnauthRoleArn": "arn:aws:iam::975050218054:role/amplify-fotomer-staging-42396-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::975050218054:role/amplify-fotomer-staging-42396-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-fotomer-staging-42396-deployment",
+      "UnauthRoleName": "amplify-fotomer-staging-42396-unauthRole",
+      "StackName": "amplify-fotomer-staging-42396",
+      "StackId": "arn:aws:cloudformation:ca-central-1:975050218054:stack/amplify-fotomer-staging-42396/618ad320-8bee-11ef-acd6-0205e5763b63",
+      "AmplifyAppId": "d20yc63kfkoy0h"
+    }
+  }
+}
