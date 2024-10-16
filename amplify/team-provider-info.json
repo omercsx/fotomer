@@ -10,6 +10,11 @@
       "StackName": "amplify-fotomer-staging-42396",
       "StackId": "arn:aws:cloudformation:ca-central-1:975050218054:stack/amplify-fotomer-staging-42396/618ad320-8bee-11ef-acd6-0205e5763b63",
       "AmplifyAppId": "d20yc63kfkoy0h"
+    },
+    "categories": {
+      "auth": {
+        "fotomer": {}
+      }
     }
   }
 }
