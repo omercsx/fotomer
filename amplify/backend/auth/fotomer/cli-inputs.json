@@ -41,8 +41,11 @@
     "userPoolGroups": false,
     "userPoolGroupList": [],
     "adminQueries": false,
-    "thirdPartyAuth": false,
-    "authProviders": [],
+    "thirdPartyAuth": true,
+    "authProviders": [
+      "graph.facebook.com",
+      "accounts.google.com"
+    ],
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,
     "authRoleArn": {
@@ -58,7 +61,17 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [],
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "fotomerPostConfirmation",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
     "hostedUI": true,
     "hostedUIDomainName": "fawnx3hwxtfo",
     "authProvidersUserPool": [
@@ -66,6 +79,16 @@
       "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"fotomer://\"],\"LogoutURLs\":[\"fotomer://\"]}"
+    "triggers": {
+      "PostConfirmation": [
+        "custom"
+      ]
+    },
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"fotomer://\"],\"LogoutURLs\":[\"fotomer://\"]}",
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"fotomerPostConfirmation\"\n  }\n]",
+    "permissions": []
   }
 }

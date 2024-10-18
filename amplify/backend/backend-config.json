@@ -2,7 +2,17 @@
   "auth": {
     "fotomer": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "fotomerPostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -29,6 +39,47 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "fotomerPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_fotomer_facebookAppId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "fotomer"
+        }
+      ]
+    },
+    "AMPLIFY_auth_fotomer_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "fotomer"
+        }
+      ]
+    },
+    "AMPLIFY_function_fotomerPostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fotomerPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_fotomerPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fotomerPostConfirmation"
+        }
+      ]
     }
   }
 }

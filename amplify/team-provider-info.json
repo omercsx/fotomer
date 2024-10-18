@@ -9,11 +9,21 @@
       "UnauthRoleName": "amplify-fotomer-staging-42396-unauthRole",
       "StackName": "amplify-fotomer-staging-42396",
       "StackId": "arn:aws:cloudformation:ca-central-1:975050218054:stack/amplify-fotomer-staging-42396/618ad320-8bee-11ef-acd6-0205e5763b63",
-      "AmplifyAppId": "d20yc63kfkoy0h"
+      "AmplifyAppId": "d20yc63kfkoy0h",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-fotomer-staging-42396-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "fotomer": {}
+        "fotomer": {
+          "facebookAppId": "925832219390840",
+          "googleClientId": "877465656726-jvkap72v3ogphmegikva3umekgqo0kgo.apps.googleusercontent.com"
+        }
+      },
+      "function": {
+        "fotomerPostConfirmation": {
+          "deploymentBucketName": "amplify-fotomer-staging-42396-deployment",
+          "s3Key": "amplify-builds/fotomerPostConfirmation-7a304d33667957355244-build.zip"
+        }
       }
     }
   }
